@@ -9,6 +9,11 @@
   gap: 0.3rem;
 }
 
+.Board .row.shake {
+  animation-name: Row_Shake;
+  animation-duration: 600ms;
+}
+
 .Board .letter {
   display: flex;
   align-items: center;
@@ -16,6 +21,32 @@
   width: 62px;
   height: 62px;
   border: 3px solid var(--color-border);
+  transition: background-color 1s ease-in-out;
+}
+
+.l0 {
+  animation-delay: 0ms;
+}
+
+.l1 {
+  animation-delay: 100ms;
+}
+
+.l2 {
+  animation-delay: 200ms;
+}
+
+.l3 {
+  animation-delay: 300ms;
+}
+
+.l4 {
+  animation-delay: 400ms;
+}
+
+.flip {
+  animation-name: Letter_Flip;
+  animation-duration: 1500ms;
 }
 
 .Board .letter#active {
@@ -35,4 +66,31 @@
 .Board .letter#absent {
   border: 3px solid var(--color-absent);
   background-color: var(--color-absent);
+}
+
+@keyframes Letter_Flip {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes Row_Shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

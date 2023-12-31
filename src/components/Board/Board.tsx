@@ -16,7 +16,7 @@ export function Board({
       );
     });
     return (
-      <div className="row" key={rowindex}>
+      <div className="row" id={rowindex.toString()} key={rowindex}>
         {rowItems}
       </div>
     );
@@ -39,7 +39,7 @@ export function Board({
       (value === "" ? "" : "active");
 
     return (
-      <div className="letter" id={id}>
+      <div className={"letter l" + letterPosition} id={id}>
         {value}
       </div>
     );
