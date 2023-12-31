@@ -1,0 +1,38 @@
+.Board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.Board .row {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.Board .letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border: 3px solid var(--color-border);
+}
+
+.Board .letter#active {
+  border: 3px solid var(--color-border-active);
+}
+
+.Board .letter#correct {
+  border: none;
+  background-color: var(--color-correct);
+}
+
+.Board .letter#present {
+  border: none;
+  background-color: var(--color-present);
+}
+
+.Board .letter#absent {
+  border: 3px solid var(--color-absent);
+  background-color: var(--color-absent);
+}
