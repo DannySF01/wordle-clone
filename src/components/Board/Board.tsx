@@ -1,26 +1,8 @@
+import { useGameContext } from "../../Contexts/GameContext";
 import "./Board.css";
 
-export function Board({
-  board,
-  currentWord,
-  currentRow,
-}: {
-  board: string[][];
-  currentWord: string;
-  currentRow: number;
-}) {
-  const rows = board.map((row, rowindex) => {
-    const rowItems = row.map((value, index) => {
-      return (
-        <Letter key={index} letterPosition={index} attemtPosition={rowindex} />
-      );
-    });
-    return (
-      <div className="row" id={rowindex.toString()} key={rowindex}>
-        {rowItems}
-      </div>
-    );
-  });
+export function Board() {
+  const { currentRow, board, word } = useGameContext();
 
   function Letter({
     letterPosition,
@@ -30,20 +12,68 @@ export function Board({
     attemtPosition: number;
   }) {
     const value = board[attemtPosition][letterPosition];
-    const correct = currentWord[letterPosition] === value;
-    const present = !correct && value !== "" && currentWord.includes(value);
+    const correct = word[letterPosition] === value;
+    const present = !correct && value !== "" && word.includes(value);
+    /* const absent =
+      !correct && !present && value !== "" && !word.includes(value); */
+    const id = attemtPosition.toString() + letterPosition.toString();
 
-    const id =
+    const state =
       (currentRow > attemtPosition &&
         (correct ? "correct" : present ? "present" : "absent")) ||
       (value === "" ? "" : "active");
 
     return (
-      <div className={"letter l" + letterPosition} id={id}>
+      <div className={"letter " + state} id={id}>
         {value}
       </div>
     );
   }
 
-  return <div className="Board">{rows}</div>;
+  return (
+    <div className="Board">
+      <div className="row" id="0">
+        <Letter letterPosition={0} attemtPosition={0} />
+        <Letter letterPosition={1} attemtPosition={0} />
+        <Letter letterPosition={2} attemtPosition={0} />
+        <Letter letterPosition={3} attemtPosition={0} />
+        <Letter letterPosition={4} attemtPosition={0} />
+      </div>
+      <div className="row" id="1">
+        <Letter letterPosition={0} attemtPosition={1} />
+        <Letter letterPosition={1} attemtPosition={1} />
+        <Letter letterPosition={2} attemtPosition={1} />
+        <Letter letterPosition={3} attemtPosition={1} />
+        <Letter letterPosition={4} attemtPosition={1} />
+      </div>
+      <div className="row" id="2">
+        <Letter letterPosition={0} attemtPosition={2} />
+        <Letter letterPosition={1} attemtPosition={2} />
+        <Letter letterPosition={2} attemtPosition={2} />
+        <Letter letterPosition={3} attemtPosition={2} />
+        <Letter letterPosition={4} attemtPosition={2} />
+      </div>
+      <div className="row" id="3">
+        <Letter letterPosition={0} attemtPosition={3} />
+        <Letter letterPosition={1} attemtPosition={3} />
+        <Letter letterPosition={2} attemtPosition={3} />
+        <Letter letterPosition={3} attemtPosition={3} />
+        <Letter letterPosition={4} attemtPosition={3} />
+      </div>
+      <div className="row" id="4">
+        <Letter letterPosition={0} attemtPosition={4} />
+        <Letter letterPosition={1} attemtPosition={4} />
+        <Letter letterPosition={2} attemtPosition={4} />
+        <Letter letterPosition={3} attemtPosition={4} />
+        <Letter letterPosition={4} attemtPosition={4} />
+      </div>
+      <div className="row" id="5">
+        <Letter letterPosition={0} attemtPosition={5} />
+        <Letter letterPosition={1} attemtPosition={5} />
+        <Letter letterPosition={2} attemtPosition={5} />
+        <Letter letterPosition={3} attemtPosition={5} />
+        <Letter letterPosition={4} attemtPosition={5} />
+      </div>
+    </div>
+  );
 }

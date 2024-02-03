@@ -1,17 +1,16 @@
 .Board {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.5rem;
 }
 
 .Board .row {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.5rem;
 }
 
 .Board .row.shake {
-  animation-name: Row_Shake;
-  animation-duration: 600ms;
+  animation: Row_Shake 500ms ease;
 }
 
 .Board .letter {
@@ -20,61 +19,46 @@
   justify-content: center;
   width: 62px;
   height: 62px;
-  border: 3px solid var(--color-border);
-  transition: background-color 1s ease-in-out;
+  border: 0.15rem solid var(--color-border);
 }
 
-.l0 {
-  animation-delay: 0ms;
-}
-
-.l1 {
-  animation-delay: 100ms;
-}
-
-.l2 {
+.Board .letter:nth-child(2) {
   animation-delay: 200ms;
 }
 
-.l3 {
-  animation-delay: 300ms;
-}
-
-.l4 {
+.Board .letter:nth-child(3) {
   animation-delay: 400ms;
 }
 
-.flip {
-  animation-name: Letter_Flip;
-  animation-duration: 1500ms;
+.Board .letter:nth-child(4) {
+  animation-delay: 600ms;
 }
 
-.Board .letter#active {
+.Board .letter:nth-child(5) {
+  animation-delay: 800ms;
+}
+
+.Board .letter.active {
   border: 3px solid var(--color-border-active);
 }
 
-.Board .letter#correct {
+.Board .letter.correct {
   border: none;
   background-color: var(--color-correct);
 }
 
-.Board .letter#present {
+.Board .letter.present {
   border: none;
   background-color: var(--color-present);
 }
 
-.Board .letter#absent {
-  border: 3px solid var(--color-absent);
+.Board .letter.absent {
+  border: none;
   background-color: var(--color-absent);
 }
 
-@keyframes Letter_Flip {
-  0% {
-    transform: rotateX(0);
-  }
-  100% {
-    transform: rotateX(360deg);
-  }
+.bounce {
+  animation: Letter_Bounce 500ms ease;
 }
 
 @keyframes Row_Shake {
@@ -92,5 +76,17 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes Letter_Bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -1,24 +1,20 @@
 import { useEffect } from "react";
 import "./KeyBoard.css";
+import { useGameContext } from "../../Contexts/GameContext";
 
-export function KeyBoard({
-  addToBoard,
-  deleteFromBoard,
-  checkWord,
-  absentLetters,
-  correctLetters,
-  presentLetters,
-}: {
-  addToBoard: (key: string) => void;
-  deleteFromBoard: () => void;
-  checkWord: () => void;
-  absentLetters: string[];
-  correctLetters: string[];
-  presentLetters: string[];
-}) {
+export function KeyBoard() {
   const firstRow = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]];
   const secondRow = [["A", "S", "D", "F", "G", "H", "J", "K", "L"]];
   const thirdRow = [["Z", "X", "C", "V", "B", "N", "M"]];
+
+  const {
+    addToBoard,
+    deleteFromBoard,
+    checkWord,
+    absentLetters,
+    correctLetters,
+    presentLetters,
+  } = useGameContext();
 
   function Key({ value }: { value: string }) {
     const id = absentLetters.includes(value)
