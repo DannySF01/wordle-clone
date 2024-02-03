@@ -5,6 +5,7 @@
 
 .App {
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -12,14 +13,6 @@
   font-weight: bold;
   gap: 2rem;
   color: var(--color);
-}
-
-.Header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #3a3a3c;
-  margin-bottom: 2rem;
 }
 
 .toast {
@@ -36,18 +29,60 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.languages {
-  display: flex;
+.stats-popup {
   position: absolute;
-  right: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.language {
-  cursor: pointer;
+.stats-popup .overlay {
+  width: 350px;
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  margin-bottom: 10px;
+}
+
+.stats-popup .stats-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stats-popup .close-btn {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
-.language img {
-  width: 2rem;
+.stats-popup .stats-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.stats-popup .stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.stats-popup .stats li {
+  flex: 1;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 0.75;
+}
+
+.stats-popup .stats label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
 }
