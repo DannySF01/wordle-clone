@@ -5,7 +5,7 @@ interface IGameContext {
   currentPosition: number;
   currentRow: number;
   board: string[][];
-  wordSet: Set<string>;
+  wordSet: Set<string> | undefined;
   word: string;
   stats: {
     played: number;
@@ -201,6 +201,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
     setErrorMessage,
     setShowStats,
     showStats,
+    setResult,
     stats,
     result,
   };
