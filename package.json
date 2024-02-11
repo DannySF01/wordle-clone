@@ -1,7 +1,7 @@
 {
   "name": "wordle-clone",
-  "homepage": "https://dannysf01.github.io/wordle-clone/",
-  "private": true,
+  "homepage": "https://dannysf01.github.io/wordle-clone",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
