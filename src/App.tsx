@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App-Container">
       <Header />
-      {word}
       <br></br>
       <div className="App">
         {errorMessage && <Toast message={errorMessage} />}

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./KeyBoard.css";
 import { useGameContext } from "../../Contexts/GameContext";
+import button_clear from "../../assets/button_clear.svg";
 
 export function KeyBoard() {
   const firstRow = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]];
@@ -62,11 +63,13 @@ export function KeyBoard() {
         })}
       </div>
       <div className="row">
+        <div className="space" />
         {secondRow.map((row) => {
           return row.map((value) => {
             return <Key key={value} value={value} />;
           });
         })}
+        <div className="space" />
       </div>
 
       <div className="row">
@@ -83,7 +86,7 @@ export function KeyBoard() {
           id="delete"
           onClick={deleteFromBoard}
         >
-          Delete
+          <img className="button_clear" src={button_clear} />
         </button>
       </div>
     </div>

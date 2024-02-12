@@ -86,3 +86,32 @@
   font-weight: 500;
   letter-spacing: 0;
 }
+
+/* Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .App {
+    gap: 1rem;
+  }
+}
+
+/* Medium devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/* Large devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Extra large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .App {
+    gap: 0.5rem;
+  }
+}
+
+/* Extra extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .App {
+    gap: 0.5rem;
+  }
+}

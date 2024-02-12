@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
 }
 
 .KeyBoard .row {
@@ -9,38 +12,134 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.KeyBoard button.key {
+.KeyBoard .key {
   background-color: #818384;
-  font-size: 1.25rem;
   font-weight: bold;
-  width: 62px;
-  height: 62px;
   border: 0;
+  flex: 1;
   border-radius: 0.25rem;
 }
 
-.KeyBoard button.key:hover {
+.KeyBoard .space {
+  flex: 0.5;
+}
+
+.KeyBoard .key:hover {
   cursor: pointer;
   background-color: #474749;
 }
 
-.KeyBoard button.key.functional {
-  width: 58px;
-  font-size: 1rem;
+.KeyBoard .key.functional {
   flex: 1.5;
 }
 
-.KeyBoard button.key#absent {
+.KeyBoard .key#absent {
   background-color: var(--color-absent);
 }
 
-.KeyBoard button.key#present {
+.KeyBoard .key#present {
   background-color: var(--color-present);
 }
 
-.KeyBoard button.key#correct {
+.KeyBoard .key#correct {
   background-color: var(--color-correct);
+}
+
+@media (max-width: 575.98px) {
+  .KeyBoard .key {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .key.functional {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .row {
+    gap: 0.3rem;
+  }
+  .KeyBoard .button_clear {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Medium devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .KeyBoard .key {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .key.functional {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .row {
+    gap: 0.3rem;
+  }
+  .KeyBoard .button_clear {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Large devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .KeyBoard .key {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .key.functional {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .row {
+    gap: 0.3rem;
+    flex: 0.5;
+  }
+  .KeyBoard .button_clear {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Extra large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .KeyBoard .key {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .key.functional {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .row {
+    width: 50%;
+    gap: 0.3rem;
+  }
+  .KeyBoard .button_clear {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Extra extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .KeyBoard .key {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .key.functional {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .KeyBoard .row {
+    width: 50%;
+    gap: 0.3rem;
+  }
+  .KeyBoard .button_clear {
+    width: 25px;
+    height: 25px;
+  }
 }

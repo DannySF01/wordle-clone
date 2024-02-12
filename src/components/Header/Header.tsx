@@ -24,7 +24,7 @@ export default function Header() {
           ></path>
         </svg>
       </div>
-      <h2>Wordle</h2>
+      <div className="header-title">Wordle</div>
       <div className="languages">
         {language === "en" && (
           <button className="language" onClick={() => setLanguage("pt")}>
