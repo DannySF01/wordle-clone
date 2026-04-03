@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import { LanguageProvider } from "./Contexts/LanguageContext.tsx";
-import { GameProvider } from "./Contexts/GameContext.tsx";
+import { LanguageProvider } from "./contexts/LanguageContext.tsx";
+import { GameProvider } from "./contexts/GameContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <LanguageProvider>

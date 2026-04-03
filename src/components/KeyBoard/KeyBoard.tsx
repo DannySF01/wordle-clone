@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./KeyBoard.css";
-import { useGameContext } from "../../Contexts/GameContext";
+import { useGameContext } from "../../contexts/GameContext";
 import button_clear from "../../assets/button_clear.svg";
 
 export function KeyBoard() {
@@ -21,10 +21,10 @@ export function KeyBoard() {
     const id = absentLetters.includes(value)
       ? "absent"
       : correctLetters.includes(value)
-      ? "correct"
-      : presentLetters.includes(value)
-      ? "present"
-      : "";
+        ? "correct"
+        : presentLetters.includes(value)
+          ? "present"
+          : "";
 
     return (
       <button className="key" id={id} onClick={() => addToBoard(value)}>

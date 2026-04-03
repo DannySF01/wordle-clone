@@ -5,7 +5,7 @@ import { GameResult } from "./components/GameResult/GameResult";
 
 import Toast from "./components/Toast/Toast";
 import Header from "./components/Header/Header";
-import { useGameContext } from "./Contexts/GameContext";
+import { useGameContext } from "./contexts/GameContext";
 
 function App() {
   const { word, result, showStats, setShowStats, stats, errorMessage } =

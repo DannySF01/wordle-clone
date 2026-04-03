@@ -1,7 +1,7 @@
 import uk from "../../assets/uk.png";
 import pt from "../../assets/pt.png";
-import { Language, useLanguageContext } from "../../Contexts/LanguageContext";
-import { useGameContext } from "../../Contexts/GameContext";
+import { Language, useLanguageContext } from "../../contexts/LanguageContext";
+import { useGameContext } from "../../contexts/GameContext";
 import "./Header.css";
 
 export default function Header() {

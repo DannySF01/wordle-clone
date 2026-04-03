@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import wordBank_en from "../wordle-en.txt";
-import wordBank_pt from "../wordle-pt.txt";
-import { useLanguageContext } from "../Contexts/LanguageContext";
+import wordBank_en from "../data/wordle-en.txt";
+import wordBank_pt from "../data/wordle-pt.txt";
+import { useLanguageContext } from "../contexts/LanguageContext";
 
 export default function useWordList() {
   const { language } = useLanguageContext();

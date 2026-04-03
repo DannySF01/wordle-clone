@@ -1,30 +1,100 @@
-# React + TypeScript + Vite
+# 🧩 Wordle Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O Wordle Clone é uma aplicação web interativa baseada no popular jogo de adivinhação de palavras. O projeto foi desenvolvido para oferecer uma experiência de jogo fiel ao original, com foco em lógica de estado complexa, animações fluidas e um design limpo e responsivo.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎮 Jogabilidade Clássica: Tenta adivinhar a palavra de 5 letras em 6 tentativas.
+- ⌨️ Input Híbrido: Suporte total para teclado físico e teclado virtual no ecrã.
+- 🎨 Feedback Visual: Cores dinâmicas para indicar o estado das letras:
+  - 🟩 Verde: Letra correta na posição correta.
+  - 🟨 Amarelo: Letra presente na palavra, mas na posição errada.
+  - ⬛ Cinza: Letra não presente na palavra.
+- ✨ Animações Realistas: Transições de revelação de blocos e animações de "shake" para palavras inválidas.
+- 📱 Design Responsivo: Totalmente otimizado para desktop, tablets e dispositivos móveis.
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-- Configure the top-level `parserOptions` property like this:
+- **Framework:** Vite
+- **Linguagem:** TypeScript
+- **Estilização:** CSS
+- **Gerenciamento de Estado:** React Hooks (useState, useEffect)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## 📂 Estrutura do Projeto
+
+```text
+/wordle-clone
+    /src
+
+      /assets             # Imagens, ícones e recursos estáticos
+
+      /components         # Componentes da interface (Grelha, Teclado)
+
+      /contexts           # Context para gestão de estado global do jogo
+
+      /data               # Dicionário de palavras e respostas possíveis
+
+      /hooks              # Lógica de jogo e manipulação de eventos de teclado
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🚀 Demo Online
+
+🔗 https://dannysf01.github.io/wordle-clone/
+
+## 📸 Screenshots
+
+![Desktop Screenshot](./src/assets//wordle.png)
+
+## ⚙️ Como Executar o Projeto
+
+### Pré-requisitos
+
+- Node.js (v18 ou superior)
+- npm ou yarn
+
+### Clonar o repositório
+
+```bash
+git clone https://github.com/DannySF01/wordle-clone.git
+cd wordle-clone
+```
+
+### Instalar dependências
+
+```bash
+npm install
+```
+
+### Executar em modo de desenvolvimento
+
+```bash
+npm run dev
+```
+
+## 📚 O Que Aprendi
+
+Durante o desenvolvimento deste projeto, foram aprofundados conhecimentos em:
+
+- Manipulação de Arrays e Strings: Implementação da lógica de comparação de palavras.
+- Gestão de Eventos Global: Captura de inputs de teclado em tempo real.
+- Animações CSS: Criação de feedback visual dinâmico para melhorar a experiência do utilizador.
+- Tipagem Estrita: Uso de TypeScript para garantir a integridade dos dados do jogo.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por Daniel Fernandes
+
+GitHub: https://github.com/DannySF01
+
+LinkedIn: https://linkedin.com/in/daniel-f-874186115
+
+---
+
+## 📝 Licença
+
+Este projeto foi desenvolvido exclusivamente para fins educativos.

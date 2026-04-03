@@ -1,4 +1,4 @@
-import { useGameContext } from "../../Contexts/GameContext";
+import { useGameContext } from "../../contexts/GameContext";
 import "./Board.css";
 
 export function Board() {
