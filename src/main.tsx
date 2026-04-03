@@ -9,5 +9,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <GameProvider>
       <App />
     </GameProvider>
-  </LanguageProvider>
+  </LanguageProvider>,
 );

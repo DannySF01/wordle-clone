@@ -4,7 +4,7 @@ import wordBank_pt from "../wordle-pt.txt";
 import { useLanguageContext } from "../Contexts/LanguageContext";
 
 export default function useWordList() {
-  const { language: LANGUAGE } = useLanguageContext();
+  const { language } = useLanguageContext();
 
   const [wordSet, setWordSet] = useState<Set<string>>();
   const [word, setWord] = useState<string>("hello");
@@ -14,22 +14,29 @@ export default function useWordList() {
     let wordSet;
     let wordBank;
 
-    if (LANGUAGE === "en") {
-      wordBank = wordBank_en;
-    } else {
-      wordBank = wordBank_pt;
+    switch (language) {
+      case "en":
+        wordBank = wordBank_en;
+        break;
+      case "pt":
+        wordBank = wordBank_pt;
+        break;
+      default:
+        wordBank = wordBank_en;
+        break;
     }
 
     await fetch(wordBank)
       .then((response) => response.text())
       .then((result) => {
-        let words;
-        if (LANGUAGE === "pt") words = result.split("\r" + "\n");
-        else words = result.split("\n");
+        const words = result.split(/\r?\n/);
 
         randomWord =
           words[Math.floor(Math.random() * words.length)].toUpperCase();
         wordSet = new Set(words);
+
+        console.log(language);
+        console.log("randomWord " + randomWord);
       });
     return { wordSet, randomWord };
   };
@@ -39,7 +46,7 @@ export default function useWordList() {
       setWordSet(words.wordSet);
       setWord(words.randomWord);
     });
-  }, [LANGUAGE]);
+  }, [language]);
 
-  return { wordSet, word };
+  return { wordSet, word, generateWordsSet };
 }

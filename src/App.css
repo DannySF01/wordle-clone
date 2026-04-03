@@ -1,25 +1,26 @@
 .App-Container {
   min-width: 100vw;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
   display: flex;
-  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   font-weight: bold;
   gap: 2rem;
-  color: var(--color);
+  flex-grow: 1;
 }
 
 .toast {
   position: fixed;
   top: 10%;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--background-toast);
+  color: var(--color-toast);
   font-size: 1rem;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
@@ -85,33 +86,4 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0;
-}
-
-/* Small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-  .App {
-    gap: 1rem;
-  }
-}
-
-/* Medium devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-}
-
-/* Large devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-}
-
-/* Extra large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .App {
-    gap: 0.5rem;
-  }
-}
-
-/* Extra extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .App {
-    gap: 0.5rem;
-  }
 }

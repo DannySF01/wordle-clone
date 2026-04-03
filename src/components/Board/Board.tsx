@@ -11,21 +11,36 @@ export function Board() {
     letterPosition: number;
     attemtPosition: number;
   }) {
-    const value = board[attemtPosition][letterPosition];
-    const correct = word[letterPosition] === value;
-    const present = !correct && value !== "" && word.includes(value);
+    const STATES = {
+      CORRECT: "correct",
+      PRESENT: "present",
+      ABSENT: "absent",
+      ACTIVE: "active",
+    };
+
+    const letter = board[attemtPosition][letterPosition];
+
+    const correct = word[letterPosition] === letter;
+
+    const present = !correct && letter !== "" && word.includes(letter);
+
     /* const absent =
       !correct && !present && value !== "" && !word.includes(value); */
+
     const id = attemtPosition.toString() + letterPosition.toString();
 
     const state =
       (currentRow > attemtPosition &&
-        (correct ? "correct" : present ? "present" : "absent")) ||
-      (value === "" ? "" : "active");
+        (correct
+          ? STATES.CORRECT
+          : present
+            ? STATES.PRESENT
+            : STATES.ABSENT)) ||
+      (letter === "" ? "" : STATES.ACTIVE);
 
     return (
       <div className={"letter " + state} id={id}>
-        {value}
+        {letter}
       </div>
     );
   }

@@ -1,12 +1,19 @@
 import uk from "../../assets/uk.png";
 import pt from "../../assets/pt.png";
-import { useLanguageContext } from "../../Contexts/LanguageContext";
+import { Language, useLanguageContext } from "../../Contexts/LanguageContext";
 import { useGameContext } from "../../Contexts/GameContext";
 import "./Header.css";
 
 export default function Header() {
   const { showStats, setShowStats } = useGameContext();
   const { language, setLanguage } = useLanguageContext();
+  const { resetGame } = useGameContext();
+
+  function handleLanguageChange(lang: Language) {
+    setLanguage(lang);
+    resetGame();
+  }
+
   return (
     <div className="Header">
       <div className="stats-icon" onClick={() => setShowStats(!showStats)}>
@@ -27,12 +34,18 @@ export default function Header() {
       <div className="header-title">Wordle</div>
       <div className="languages">
         {language === "en" && (
-          <button className="language" onClick={() => setLanguage("pt")}>
+          <button
+            className="language"
+            onClick={() => handleLanguageChange("pt")}
+          >
             <img src={uk} alt="uk" />
           </button>
         )}
         {language === "pt" && (
-          <button className="language" onClick={() => setLanguage("en")}>
+          <button
+            className="language"
+            onClick={() => handleLanguageChange("en")}
+          >
             <img src={pt} alt="pt" />
           </button>
         )}

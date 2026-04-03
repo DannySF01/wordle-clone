@@ -25,6 +25,7 @@ interface IGameContext {
   addToCorrectLetters: (key: string) => void;
   addToPresentLetters: (key: string) => void;
   deleteFromBoard: () => void;
+  resetGame: () => void;
   checkWord: () => void;
   setShowStats: (value: boolean) => void;
   setResult: (value: string) => void;
@@ -36,6 +37,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [result, setResult] = useState<string>("");
   const [showStats, setShowStats] = useState(false);
+
   const stats = JSON.parse(localStorage.getItem("stats")!) || {
     played: 0,
     wins: 0,
@@ -52,6 +54,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   const [presentLetters, setPresentLetters] = useState<string[]>([]);
 
   const { wordSet, word } = useWordList();
+
   const [board, setBoard] = useState<string[][]>([
     ["", "", "", "", ""],
     ["", "", "", "", ""],
@@ -62,6 +65,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   ]);
 
   const row = document.getElementById(currentRow.toString());
+
   const ANIMATION_DELAY = 500;
   const WIN_DELAY = 500;
   const PAINT_KEYS_DELAY = 500;
@@ -98,6 +102,8 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
+    console.log(guessedWord.toLowerCase());
+
     if (!wordSet.has(guessedWord.toLowerCase())) {
       row?.classList.add("shake");
       setErrorMessage("Not a valid word");
@@ -129,7 +135,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
             played: stats.played + 1,
             losses: stats.losses + 1,
             streak: 0,
-          })
+          }),
         );
         setResult("LOSE");
       }
@@ -145,7 +151,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
               stats.streak >= stats.maxStreak
                 ? stats.streak + 1
                 : stats.maxStreak,
-          })
+          }),
         );
         setTimeout(() => {
           setResult("WIN");
@@ -179,6 +185,27 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }
 
+  function resetGame() {
+    setCurrentRow(0);
+    setCurrentPosition(0);
+    setBoard([
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+    ]);
+
+    setAbsentLetters([]);
+    setCorrectLetters([]);
+    setPresentLetters([]);
+
+    setErrorMessage("");
+    setShowStats(false);
+    setResult("");
+  }
+
   const gameValues = {
     currentRow,
     currentPosition,
@@ -196,6 +223,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
     presentLetters,
     checkWord,
     deleteFromBoard,
+    resetGame,
     addToBoard,
     errorMessage,
     setErrorMessage,
