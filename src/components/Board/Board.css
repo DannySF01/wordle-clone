@@ -92,17 +92,9 @@
 }
 
 @media (max-width: 575.98px) {
-  .Board {
-    gap: 0.3rem;
-  }
-
-  .Board .row {
-    gap: 0.3rem;
-  }
-
   .Board .letter {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -119,21 +111,5 @@
   .Board .letter {
     width: 80px;
     height: 80px;
-  }
-}
-
-/* Extra large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .Board .letter {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-/* Extra extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .Board .letter {
-    width: 90px;
-    height: 90px;
   }
 }

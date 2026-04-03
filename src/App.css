@@ -14,6 +14,7 @@
   font-weight: bold;
   gap: 2rem;
   flex-grow: 1;
+  padding-inline: 1.5rem;
 }
 
 .toast {
@@ -86,4 +87,13 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0;
+}
+
+@media (max-width: 400px) {
+  .App {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
 }

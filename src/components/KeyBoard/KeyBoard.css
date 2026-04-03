@@ -1,7 +1,7 @@
 .KeyBoard {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
   max-width: 800px;
   width: 100%;
   -webkit-tap-highlight-color: transparent; /* Remove the tap highlight on mobile */
@@ -10,22 +10,32 @@
 .KeyBoard .row {
   display: flex;
   width: 100%;
-  gap: 6px;
+  gap: 8px;
 }
 
 .KeyBoard .key {
   background-color: var(--background-key);
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   border: 0;
   flex: 1;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
-  height: 50px;
+  aspect-ratio: 1/1;
+  padding: 0;
 
   &.functional {
+    padding-inline: 0.25rem;
     flex: 1.5;
+    aspect-ratio: unset;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    & .button_clear {
+      width: 3rem;
+    }
   }
 
   &:hover {
@@ -51,4 +61,20 @@
 
 .KeyBoard .space {
   flex: 0.5;
+}
+
+@media (max-width: 600px) {
+  .KeyBoard {
+    gap: 3px;
+  }
+  .KeyBoard .row {
+    gap: 3px;
+  }
+  .KeyBoard .key {
+    font-size: 1.25rem;
+  }
+
+  .KeyBoard .key.functional .button_clear {
+    width: 2rem;
+  }
 }
