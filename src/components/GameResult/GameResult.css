@@ -7,11 +7,30 @@
   align-items: center;
   justify-content: center;
   background-color: var(--background-color);
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.GameResult .result-title {
+  margin: 0;
+
+  &#win {
+    color: var(--color-win);
+  }
+
+  &#lose {
+    color: var(--color-lose);
+  }
+}
+
+.GameResult .right-word {
+  border: 2px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
 }
 
 .GameResult button {
   font-size: 1.5rem;
-  font-weight: bold;
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 0.25rem;
@@ -19,4 +38,13 @@
 
 .GameResult button.play-again {
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--background-key-hover);
+    scale: 1.05;
+  }
+
+  &:active {
+    background-color: var(--background-key);
+  }
 }

@@ -1,0 +1,57 @@
+.stats-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.stats-popup .overlay {
+  width: 350px;
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  margin-bottom: 10px;
+}
+
+.stats-popup .stats-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stats-popup .close-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.stats-popup .stats-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.stats-popup .stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.stats-popup .stats li {
+  flex: 1;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 0.75;
+}
+
+.stats-popup .stats label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}

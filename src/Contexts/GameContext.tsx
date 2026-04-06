@@ -137,7 +137,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
             streak: 0,
           }),
         );
-        setResult("LOSE");
+        setResult("lose");
       }
       if (word === guessedWord) {
         localStorage.setItem(
@@ -154,7 +154,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
           }),
         );
         setTimeout(() => {
-          setResult("WIN");
+          setResult("win");
         }, WIN_DELAY);
       }
     }, PAINT_KEYS_DELAY);

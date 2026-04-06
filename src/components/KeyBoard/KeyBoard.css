@@ -15,7 +15,6 @@
 
 .KeyBoard .key {
   background-color: var(--background-key);
-  font-weight: bold;
   font-size: 1.5rem;
   border: 0;
   flex: 1;
@@ -23,6 +22,7 @@
   cursor: pointer;
   transition: all 0.2s;
   aspect-ratio: 1/1;
+  text-transform: uppercase;
   padding: 0;
 
   &.functional {
