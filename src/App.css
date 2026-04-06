@@ -14,13 +14,7 @@
   font-weight: bold;
   gap: 2rem;
   flex-grow: 1;
-  padding-inline: 1.5rem;
-}
-
-@media (max-width: 400px) {
-  .App {
-    gap: 2rem;
-  }
+  padding-inline: 0.5rem;
 }
 
 @media (min-width: 768px) {

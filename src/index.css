@@ -16,7 +16,7 @@
 
   --background-color: #121213;
   --background-card: #1a1a1b;
-  --background-key: #818384;
+  --background-key: #6b6b6b;
   --background-key-hover: #565758;
   --background-toast: #fff;
   --color: #f8f8f8;
@@ -41,4 +41,10 @@ body {
   overflow: hidden;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+button {
+  cursor: pointer;
+  color: var(--color);
+  background-color: var(--background-key);
 }
