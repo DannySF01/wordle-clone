@@ -301,7 +301,7 @@ epoca
 ergue
 erroa
 erros
-erva
+ervas
 escol
 espia
 estai
@@ -366,7 +366,7 @@ flora
 fluxo
 fobia
 focar
-fogo
+fogos
 folga
 folha
 fonte
@@ -382,7 +382,6 @@ frade
 frase
 freio
 frena
-frio
 frita
 frito
 frota
@@ -436,7 +435,7 @@ grosa
 grupo
 gruta
 gueto
-guia
+guias
 guiso
 gulas
 homem
@@ -445,7 +444,7 @@ humor
 idade
 ideal
 igual
-ilha
+ilhas
 impor
 imune
 inala
@@ -518,7 +517,7 @@ lulas
 lunar
 lutar
 luvas
-luxo
+luxos
 luzia
 luzir
 macas
@@ -656,7 +655,7 @@ nobre
 noite
 noiva
 noivo
-nome
+nomes
 nomes
 norma
 norte
@@ -665,14 +664,13 @@ novas
 novos
 nuvem
 obeso
-obra
+obras
 obter
 ocaso
 ocupa
 odiar
 odres
 oeste
-oleo
 olhar
 olhos
 ombro
@@ -682,7 +680,6 @@ opcao
 opera
 ordem
 orgia
-osso
 outra
 outro
 ouvir
@@ -774,7 +771,6 @@ ratos
 razia
 reais
 reban
-rede
 reger
 regra
 reino
@@ -823,7 +819,6 @@ saude
 seara
 secar
 sedar
-sede
 segui
 segur
 senao
@@ -888,7 +883,6 @@ tenso
 tenta
 tente
 tento
-teor
 termo
 terra
 teste
@@ -942,11 +936,9 @@ turno
 tutor
 uniao
 unico
-unir
 untar
 urdir
 urina
-urso
 usual
 vagar
 vagos
@@ -987,9 +979,21 @@ visto
 vital
 viver
 vivos
-voar
 vocal
 vogar
 volta
 votar
 vulgo
+horta
+mudar
+orcas
+armas
+santa
+penas
+cenas
+finta
+redes
+rende
+unido
+sonda
+canta
