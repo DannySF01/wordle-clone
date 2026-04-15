@@ -2,59 +2,72 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-width: 800px;
+  max-width: 500px;
   width: 100%;
-  -webkit-tap-highlight-color: transparent; /* Remove the tap highlight on mobile */
+  margin: 0 auto;
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: 8px;
 }
 
 .KeyBoard .row {
   display: flex;
   width: 100%;
-  gap: 8px;
+  touch-action: manipulation;
+  gap: 6px;
+  justify-content: center;
 }
 
 .KeyBoard .key {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
   border: 0;
-  flex: 1;
-  border-radius: 6px;
+  flex: 1 1 0;
+  height: 58px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s;
-  aspect-ratio: 1/1;
+  transition:
+    background-color 400ms ease,
+    transform 100ms ease,
+    opacity 200ms ease;
   text-transform: uppercase;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-key);
+  color: var(--color);
 
   &.functional {
-    padding-inline: 0.25rem;
     flex: 1.5;
-    aspect-ratio: unset;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    font-size: 0.85rem;
 
     & .button_clear {
-      width: 3rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 
   &:hover {
     background-color: var(--background-key-hover);
+    filter: brightness(1.1);
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
 
   &#absent {
     background-color: var(--color-absent);
+    opacity: 0.4;
   }
 
   &#present {
     background-color: var(--color-present);
+    color: #fff;
   }
 
   &#correct {
     background-color: var(--color-correct);
+    color: #fff;
   }
 }
 
@@ -62,18 +75,27 @@
   flex: 0.5;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .KeyBoard {
-    gap: 3px;
+    gap: 4px;
+    padding-inline: 4px;
   }
+
   .KeyBoard .row {
-    gap: 3px;
+    gap: 4px;
   }
+
   .KeyBoard .key {
-    font-size: 1rem;
+    height: 62px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+
+    &.functional {
+      font-size: 0.65rem;
+    }
   }
 
   .KeyBoard .key.functional .button_clear {
-    width: 2rem;
+    width: 1.2rem;
   }
 }

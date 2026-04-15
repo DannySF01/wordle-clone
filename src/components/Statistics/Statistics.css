@@ -1,39 +1,67 @@
 .stats-popup {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--background-color);
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .stats-popup .overlay {
-  width: 350px;
-  font-size: 14px;
-  letter-spacing: 0.05rem;
-  margin-bottom: 10px;
+  background-color: var(--background-card);
+  width: 90%;
+  max-width: 400px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .stats-popup .stats-header {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: -10px;
 }
 
 .stats-popup .close-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.stats-popup .close-btn:hover {
+  transform: scale(1.2);
 }
 
 .stats-popup .stats-container {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stats-popup .stats-container h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .stats-popup .stats {
@@ -41,17 +69,27 @@
   padding: 0;
   margin: 0;
   display: flex;
+  width: 100%;
 }
 
 .stats-popup .stats li {
   flex: 1;
-  text-align: center;
-  font-size: 2rem;
-  line-height: 0.75;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stats-popup .stat {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color);
 }
 
 .stats-popup .stats label {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #a1a1a1;
+  text-transform: uppercase;
+  text-align: center;
 }

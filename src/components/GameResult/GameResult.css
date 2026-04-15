@@ -1,50 +1,87 @@
 .GameResult {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  padding: 3rem 2rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--background-color);
-  gap: 1.5rem;
-  font-size: 1.5rem;
+  gap: 2rem;
+
+  background-color: rgba(26, 26, 27, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  animation: modalShow 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes modalShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .GameResult .result-title {
   margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
 
   &#win {
     color: var(--color-win);
+    text-shadow: 0 0 20px rgba(83, 141, 78, 0.3);
   }
 
   &#lose {
     color: var(--color-lose);
+    text-shadow: 0 0 20px rgba(192, 57, 43, 0.3);
   }
 }
 
 .GameResult .right-word {
-  border: 2px solid var(--color-border);
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-}
-
-.GameResult button {
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  border: 0;
-  border-radius: 0.25rem;
+  background-color: var(--background-card);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color);
 }
 
 .GameResult button.play-again {
-  cursor: pointer;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-win);
+  color: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background-color: var(--background-key-hover);
-    scale: 1.05;
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
 
   &:active {
-    background-color: var(--background-key);
+    transform: translateY(0);
   }
 }

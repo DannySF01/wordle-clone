@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .Board .row {
@@ -9,107 +10,92 @@
   gap: 0.5rem;
 }
 
-.Board .row.shake {
-  animation: Row_Shake 500ms ease;
-}
-
 .Board .letter {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 62px;
+  height: 62px;
   border: 2px solid var(--color-border);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  user-select: none;
+  transition: border-color 0.2s ease;
 }
 
-.Board .letter:nth-child(2) {
-  animation-delay: 200ms;
+.Board .letter.correct {
+  background-color: var(--color-correct);
+  border: none;
+  color: white;
 }
-
-.Board .letter:nth-child(3) {
-  animation-delay: 400ms;
+.Board .letter.present {
+  background-color: var(--color-present);
+  border: none;
+  color: white;
 }
-
-.Board .letter:nth-child(4) {
-  animation-delay: 600ms;
-}
-
-.Board .letter:nth-child(5) {
-  animation-delay: 800ms;
+.Board .letter.absent {
+  background-color: var(--color-absent);
+  border: none;
+  color: white;
 }
 
 .Board .letter.active {
   border: 2px solid var(--color-border-active);
+  animation: Letter_Pop 100ms ease-in-out;
 }
 
-.Board .letter.correct {
-  border: none;
-  background-color: var(--color-correct);
+.Board .letter.reveal {
+  animation: Letter_Flip 500ms ease-in-out forwards;
 }
 
-.Board .letter.present {
-  border: none;
-  background-color: var(--color-present);
-}
-
-.Board .letter.absent {
-  border: none;
-  background-color: var(--color-absent);
-}
-
-.bounce {
-  animation: Letter_Bounce 500ms ease;
+.Board .row.shake {
+  animation: Row_Shake 400ms ease-in-out;
 }
 
 @keyframes Row_Shake {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(2px);
-  }
-  50% {
-    transform: translateX(-2px);
-  }
-  75% {
-    transform: translateX(2px);
-  }
+  0%,
   100% {
     transform: translateX(0);
   }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
-@keyframes Letter_Bounce {
+@keyframes Letter_Pop {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
   }
 }
 
-@media (max-width: 575.98px) {
-  .Board .letter {
-    width: 60px;
-    height: 60px;
+@keyframes Letter_Flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
   }
 }
 
-/* Medium devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media (max-width: 400px) {
   .Board .letter {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-/* Large devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .Board .letter {
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
   }
 }
